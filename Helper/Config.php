@@ -106,9 +106,9 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
             throw new \Exception("Invalid arguments count for addMethod FuncCall");
         }
         $methodId = array_shift($args);
-        if (!is_string($methodId) || !preg_match('#^[a-z][a-z0-9_]*$#', $methodId)) {
+        if (!is_string($methodId) || !preg_match('#^[a-zA-Z][a-zA-Z0-9_-]*$#', $methodId)) {
             throw new \Exception("Invalid first argument for addMethod FuncCall: the first argument"
-                . " must be a string and match the following pattern : ^[a-z][a-z0-9_]*$");
+                . " must be a string and match the following pattern : ^[a-zA-Z][a-zA-Z0-9_-]*$");
         }
 
         $methodOptions = array_shift($args);
